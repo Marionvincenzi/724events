@@ -17,11 +17,7 @@ const EventCard = ({
     {...props}
   >
     <div className="EventCard__imageContainer">
-      {imageSrc ? (
         <img data-testid="card-image-testid" src={imageSrc} alt={imageAlt} />
-      ) : (
-        <div className="EventCard__placeholder">No image available</div>
-      )}
       <div className="EventCard__label">{label}</div>
     </div>
     <div className="EventCard__descriptionContainer">
@@ -35,7 +31,7 @@ EventCard.propTypes = {
   imageSrc: PropTypes.string,
   imageAlt: PropTypes.string,
   date: PropTypes.instanceOf(Date).isRequired,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   small: PropTypes.bool,
   label: PropTypes.string.isRequired,
 };
@@ -44,6 +40,7 @@ EventCard.defaultProps = {
   imageSrc: "default-image-url.jpg",
   imageAlt: "image",
   small: false,
+  title: ""
 };
 
 export default EventCard;
