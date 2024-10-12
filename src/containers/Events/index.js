@@ -11,7 +11,7 @@ const PER_PAGE = 9;
 
 const EventList = () => {
   const { data, error } = useData();
-  const [type, setType] = useState();
+  const [type, setType] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const filteredEvents = (
     // il manquait cette partie pour le bon choix du filtrage ( event type === type) ajout de .filter pour le choix du filtrage
